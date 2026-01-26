@@ -219,7 +219,6 @@ fun App() {
             text = "GitHabit",
             fontSize = 64.sp,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Justify,
             modifier = Modifier.padding(bottom = 0.dp)
         )
 
@@ -263,7 +262,7 @@ fun App() {
         // Display message if handle is invalid
         if (invalidData) {
             Text(
-                text = "Invalid Github handle",
+                text = "Invalid Github handle or Rate limit exceeded",
                 color = Color.Red
             )
         }
@@ -273,6 +272,29 @@ fun App() {
             Text(
                 text = "$retrievalError"
             )
+        }
+
+        // Last commit
+        reposData?.let { repos ->
+            if (!repos.isEmpty()) {
+                Text(
+                    text = "Last Commit: ${repos[0].updatedAt.split("T")[0]}",
+                    color = Color.Blue,
+                    fontSize = 48.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(24.dp),
+                    lineHeight = 64.sp
+                )
+            } else {
+                Text(
+                    text = "Last Commit: NEVER",
+                    color = Color.Blue,
+                    fontSize = 48.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(24.dp),
+                    lineHeight = 64.sp
+                )
+            }
         }
 
         // Display GitHub Profile
