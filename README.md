@@ -1,8 +1,12 @@
 # GitHabit
 
+![App logo](app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
+
 *This is meant to be an introduction project to Android App Development*
 
 GitHabit is a clean, reactive Android application built with Jetpack Compose that allows users to track their GitHub activity. It provides a real-time overview of a user's profile, repository list, and their most recent commit date.
+
+![Demo image](app/src/main/res/Screenshot_GitHabit.jpg)
 
 ## Features
 
